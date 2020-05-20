@@ -44,8 +44,23 @@
         <a href="./acknowledgment.php">Check Your Status</a>
       </li>
       <li class="sidebar-nav-item">
-        <a href="https://integrations.eu-gb.assistant.watson.cloud.ibm.com/web/public/9e06ef38-1f2e-41d5-8f25-ef3b718d438a" target="_blank">Know
-          About COVID-19</a>
+        <!-- <a href="https://integrations.eu-gb.assistant.watson.cloud.ibm.com/web/public/9e06ef38-1f2e-41d5-8f25-ef3b718d438a" target="_blank">Know
+          About COVID-19</a> -->
+        <script>
+          window.watsonAssistantChatOptions = {
+            integrationID: "81c5af9f-8ad1-41cd-b5d9-8c2abe3493e7", // The ID of this integration.
+            region: "eu-gb", // The region your integration is hosted in.
+            serviceInstanceID: "fd6142d5-00c9-4b9c-9017-4f1ce55278cf", // The ID of your service instance.
+            onLoad: function(instance) {
+              instance.render();
+            }
+          };
+          setTimeout(function() {
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+            document.head.appendChild(t);
+          });
+        </script>
       </li>
     </ul>
   </nav>
