@@ -78,7 +78,6 @@
             <input type="number" name="ack_number" id="ack_number" placeholder="Acknowledment Number" required />
             <button name="submit" id="submit" class="submit">Submit</button>
             <br><br>
-            <img src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$ack' />
         </form>
         <?php
         $conn = mysqli_connect("localhost", "root", "bhavik", "safar");
@@ -92,6 +91,7 @@
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
                 $disp = $row['position'];
+                echo "<img src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=$ack' />";
                 echo "<script>alert('$disp')</script>";
             }
         };
